@@ -1,0 +1,42 @@
+name: Build Windows EXE
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'windows_chat_helper/**'
+      - '.github/workflows/build-windows-exe.yml'
+
+jobs:
+  build:
+    runs-on: windows-latest
+    defaults:
+      run:
+        shell: cmd
+        working-directory: windows_chat_helper
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Build EXE
+        run: pyinstaller --noconfirm ChatHelper.spec
+
+      - name: Package release
+        run: python package_release.py
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ChatHelper-Windows
+          path: windows_chat_helper/release/ChatHelper-Windows.zip
