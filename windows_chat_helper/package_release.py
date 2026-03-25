@@ -42,6 +42,8 @@ def main() -> None:
 
     shutil.copy2(BUILD_OUTPUT_EXE, DELIVERABLE_DIR / "ChatHelper.exe")
     shutil.copy2(BASE / "README.md", DELIVERABLE_DIR / "README.md")
+    if (BASE / "QUICKSTART_GITHUB_CN.md").exists():
+        shutil.copy2(BASE / "QUICKSTART_GITHUB_CN.md", DELIVERABLE_DIR / "QUICKSTART_GITHUB_CN.md")
     write_quickstart(DELIVERABLE_DIR)
 
     if ZIP_PATH.exists():

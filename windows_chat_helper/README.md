@@ -9,6 +9,28 @@
 
 ---
 
+## 0. 小白最快上手（你现在就按这个做）
+
+如果代码在 GitHub 上，你**不需要在自己电脑配 Python**，最简单方法是用仓库自带的 GitHub Actions 自动打包：
+
+### A. 先拿到成品 zip（推荐）
+1. 打开你的仓库页面：`cnc-machining-website`。  
+2. 点上方 **Actions**。  
+3. 左边找到 **Build Windows EXE** 工作流。  
+4. 点击 **Run workflow**（选主分支）然后运行。  
+5. 等 2~6 分钟，运行完成后进入该任务页面。  
+6. 在页面底部 **Artifacts** 下载：`ChatHelper-Windows`。  
+7. 下载后解压，得到 `ChatHelper.exe`。  
+
+### B. 在你的电脑双击使用
+1. 双击 `ChatHelper.exe`。  
+2. 第一次打开，点“设置”，填入 OpenAI API Key，保存。  
+3. 按 `Ctrl + Shift + Space` 呼出窗口开始说中文。  
+
+> 结论：你真正要下载的是 **ChatHelper-Windows.zip（artifact）**，解压后双击 **ChatHelper.exe**。
+
+---
+
 ## 1. 为什么选这个技术方案（先给你结论）
 
 ### 最终选型
