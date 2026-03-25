@@ -1,0 +1,11 @@
+This Linux environment cannot generate a native Windows .exe directly.
+
+To produce the actual Windows deliverable, use either:
+1) A Windows machine: double-click build_windows.bat in windows_chat_helper/
+2) GitHub Actions: run workflow "Build Windows EXE" and download artifact ChatHelper-Windows.zip
+
+Expected final deliverable files after Windows build:
+- release/ChatHelper-Windows/ChatHelper.exe
+- release/ChatHelper-Windows/README.md
+- release/ChatHelper-Windows/QuickStart.txt
+- release/ChatHelper-Windows.zip
